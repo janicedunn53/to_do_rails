@@ -29,6 +29,12 @@ class TasksController < ApplicationController
     end
   end
 
+  def mark
+    @task = Task.find(params[:id])
+    @task.update_attribute(:done, true)
+    redirect_to list_path(params[:list_id])
+  end
+
   def destroy
     @task = Task.find(params[:id])
     @task.destroy

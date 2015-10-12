@@ -8,13 +8,14 @@
       <li>
         <%= task.description %> |
         <%= link_to "Edit", edit_list_task_path(@list, task) %> |
-        <%= link_to "Delete", list_task_path(@list, task), :data => {:confirm => "Are you sure?", :method => "delete"} %>
-        <%= link_to "done", list_task_path(@list, task), :data => {:confirm => "Are you sure?", :method => "patch", :done => true} %>
+        <%= link_to "Delete", list_task_path(@list, task), :data => {:confirm => "Are you sure?", :method => "delete"} %> |
+        <%= link_to "Done", mark_list_task_path(@list, task), :data => {:confirm => "Are you sure?", :method => "update"} %>
         </li>
     <% end %>
   </ul>
 
   <ul>
+    <h3>Completed Tasks</h3>
     <% @list.tasks.each do |task| %>
       <% if task.done %>
         <li><%= task.description %> | Done</li>
