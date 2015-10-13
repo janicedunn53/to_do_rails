@@ -4,14 +4,14 @@ default: &default
 
 development:
   <<: *default
-  database: to_do_development
+  database: to_do_rails_development
 
 test:
   <<: *default
-  database: to_do_test
+  database: to_do_rails_test
 
 production:
   <<: *default
-  database: to_do_production
-  username: to_do
+  database: to_do_rails_production
+  username: to_do_rails
   password: <%= ENV['EXAMPLE_DATABASE_PASSWORD'] %>
