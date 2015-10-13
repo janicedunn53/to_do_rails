@@ -10,4 +10,14 @@ describe "the edit a task process" do
     click_on 'Update Task'
     expect(page).to have_content 'Home stuff'
   end
+
+  # it "gives an error when no description is entered" do
+  #   list = List.create(:name => 'Home stuff')
+  #   task = Task.create(:description => 'Wash the dishes', :list_id => list.id)
+  #   visit list_path(list)
+  #   click_on 'Edit'
+  #   fill_in 'Description', :with => ''
+  #   click_on 'Update Task'
+  #   expect(page).to have_content 'errors'
+  # end
 end
